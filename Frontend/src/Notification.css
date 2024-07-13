@@ -1,0 +1,52 @@
+.notifications-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.notifications-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.notifications-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-item {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification-message {
+    flex: 1;
+}
+
+.notification-sent-date {
+    margin-left: 20px; /* Adjust spacing between message and date */
+}
+
+.error-container {
+    background-color: #ffe5e5;
+    color: #cc0000;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}

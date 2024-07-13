@@ -1,0 +1,134 @@
+/* General Styles */
+.home-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-color: #f6f9fc;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .hero-button {
+    background-color: #f48024;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Features Section */
+  .features-container {
+    background-color: #fff;
+    padding: 80px 0;
+  }
+  
+  .features-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .feature {
+    max-width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .feature-text {
+    padding: 20px;
+  }
+  
+  .feature-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature-description {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .expanded-description {
+    background-color: #f6f9fc;
+    padding: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    background-color: #f48024;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .cta-button {
+    background-color: #fff;
+    color: #f48024;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Footer Section */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
