@@ -1,0 +1,31 @@
+.profileContainer {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .profileHeader {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .profileDetails {
+    margin-top: 20px;
+  }
+  
+  .roleList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .roleItem {
+    margin-bottom: 5px;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  

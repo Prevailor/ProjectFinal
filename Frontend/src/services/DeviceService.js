@@ -78,16 +78,23 @@ const addDevice = async (device) => {
 // Update device with token in headers
 const updateDevice = async (deviceId, deviceDTO) => {
   try {
+    console.log(deviceId);
     const response = await axios.put(`${BASE_URL}/admin/update/${deviceId}`, deviceDTO, {
       headers: {
-         ...authHeader() ,
+        ...authHeader(),
         'Access-Control-Allow-Origin': '*'
-        }
+      }
     });
-    return response.data;
-  } catch (err) {
-    throw err;
+    return response.data; // Return data if request is successful
+  } catch (error) {
+    if (error.response && error.response.data) {
+      console.log(error.response.data);
+      throw error.response.data; // Throw backend error message
+    } else {
+      throw error; // Throw generic error if no response or data
+    }
   }
+
 };
 
 // Delete device with token in headers

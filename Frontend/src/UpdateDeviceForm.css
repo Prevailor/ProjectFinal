@@ -1,0 +1,64 @@
+/* UpdateDeviceForm.css */
+
+.update-device-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust this according to your layout */
+  }
+  
+  .update-device-form-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .update-device-form-card h2 {
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .update-device-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .update-device-form-card label {
+    display: block;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .update-device-form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .update-device-form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .update-device-form-card .btn-primary {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+  }
+  
+  .update-device-form-message {
+    margin-top: 1.5rem;
+  }
+  

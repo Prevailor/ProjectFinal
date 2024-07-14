@@ -28,7 +28,9 @@ const ViewEndOfSupportDates = () => {
       {loading && <p>Loading...</p>}
       <ul className="list-group">
         {supportDates.map((date, index) => (
-          <li key={index} className="list-group-item">{date}</li>
+          <li key={index} className="list-group-item">
+            {`${date.softwareName} - End of Support: ${date.supportEndDate}`}
+          </li>
         ))}
       </ul>
     </div>

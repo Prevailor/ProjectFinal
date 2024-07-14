@@ -1,0 +1,236 @@
+/* Table container styles */
+.view-devices-container {
+  margin-top: 20px; /* Adjust margin as needed */
+  width: 200%;
+  margin-left: -10%;
+}
+
+/* Search section styles */
+.search-section {
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.search-section select,
+.search-section input[type="text"],
+.search-section button {
+  margin-right: 10px; /* Ensure consistent spacing between elements */
+}
+
+/* Table styles */
+.view-devices-table {
+  background-color: #fff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Collapse border spacing */
+}
+
+/* Table header styles */
+.view-devices-table th {
+  background-color: #007bff; /* Primary color */
+  color: #fff; /* White text color */
+  padding: 12px;
+  text-align: center; /* Center align text */
+  width: 150px;
+
+}
+
+/* Table body styles */
+.view-devices-table td {
+  padding: 12px; /* Increase padding for better readability */
+  text-align: center; /* Center align text */
+}
+
+/* Colorful table data */
+.view-devices-table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Light gray background for odd rows */
+}
+
+/* Table row hover styles */
+.view-devices-table tbody tr:hover {
+  background-color: #e3e3e3; /* Darker shade on hover */
+}
+
+/* Button styles */
+
+
+.view-devices-container {
+  padding: 20px;
+    min-height: 100vh;
+    width: 160%;
+    margin-left: -30%;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+}
+
+.view-devices-btn {
+  margin-left: 10px;
+  width: 10px;
+}
+
+.view-devices-table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+}
+
+.view-devices-table th {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px;
+}
+
+.view-devices-table td {
+  padding: 5px;
+}
+
+.view-devices-table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.view-devices-table tbody tr:hover {
+  background-color: #e3e3e3;
+}
+.user-view-software {
+  padding: 20px;
+    min-height: 100vh;
+    width: 160%;
+    margin-left: -30%;
+}
+
+.user-view-software h2 {
+  margin-bottom: 20px;
+}
+
+.user-view-software .form-group {
+  margin-bottom: 20px;
+}
+
+.user-view-software .alert {
+  margin-bottom: 20px;
+}
+
+.user-view-software table {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-view-software table th {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+}
+
+.user-view-software table td {
+  padding: 10px;
+}
+
+.user-view-software table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.user-view-software table tbody tr:hover {
+  background-color: #e3e3e3;
+}
+
+.user-view-software .table-responsive {
+  overflow-x: auto;
+}
+
+.btn-primary{
+  width: 120px;
+}
+
+/* UserViewDevices.css */
+
+/* UserViewDevices.css */
+
+
+/* UserViewDevices.css */
+
+/* UserViewDevices.css */
+
+.countdown-container {
+  display: flex;
+  gap: 5px;
+  height: 60px;
+}
+
+.countdown-item {
+  position: relative;
+  display: inline-block;
+  padding: 1px 2px; /* Adjust padding for better text visibility */
+  background-color: #5cb85c; /* Green background */
+  color: #fff; /* White text */
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.countdown-item .fold-top,
+.countdown-item .fold-bottom {
+  position: absolute;
+  background-color: #5cb85c; /* Same as background */
+  width: 100%;
+  height: 0;
+  transform-origin: top;
+}
+
+.countdown-item .fold-bottom {
+  top: 100%;
+  transform-origin: bottom;
+}
+
+/* Animation keyframes */
+@keyframes fold-top {
+  0% {
+    transform: translateY(0) rotateX(0);
+  }
+  100% {
+    transform: translateY(-100%) rotateX(-180deg);
+  }
+}
+
+@keyframes fold-bottom {
+  0% {
+    transform: translateY(0) rotateX(0);
+  }
+  100% {
+    transform: translateY(100%) rotateX(180deg);
+  }
+}
+
+/* Apply animations based on class */
+.fold-animate .fold-top,
+.fold-animate .fold-bottom {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fold-animate.calendar-green-1 .fold-top,
+.fold-animate.calendar-green-1 .fold-bottom {
+  animation-name: fold-top, fold-bottom;
+}
+
+.fold-animate.calendar-green-2 .fold-top,
+.fold-animate.calendar-green-2 .fold-bottom {
+  animation-name: fold-top, fold-bottom;
+}
+
+.fold-animate.calendar-green-3 .fold-top,
+.fold-animate.calendar-green-3 .fold-bottom {
+  animation-name: fold-top, fold-bottom;
+}
+
+.fold-animate.calendar-green-4 .fold-top,
+.fold-animate.calendar-green-4 .fold-bottom {
+  animation-name: fold-top, fold-bottom;
+}

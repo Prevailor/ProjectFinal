@@ -1,0 +1,136 @@
+/* UserViewSoftware.css */
+
+.user-view-software {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.user-view-software h2 {
+  margin-bottom: 20px;
+}
+
+.user-view-software .form-group {
+  margin-bottom: 20px;
+}
+
+.user-view-software .alert {
+  margin-bottom: 20px;
+}
+
+.user-view-software table {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-view-software table th {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+}
+
+.user-view-software table td {
+  padding: 10px;
+}
+
+.user-view-software table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.user-view-software table tbody tr:hover {
+  background-color: #e3e3e3;
+}
+
+.user-view-software .table-responsive {
+  overflow-x: auto;
+}
+
+.btn-primary {
+  width: 120px;
+}
+
+.btn-success{
+    background-color: #007bff;
+}
+
+/* Countdown styles */
+.countdown-container {
+  display: flex;
+  gap: 10px; /* Increased gap for better visibility */
+  height: 60px;
+}
+
+.countdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px; /* Increased padding for larger size */
+  background-color: #5cb85c; /* Green background */
+  color: #fff; /* White text */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 8px; /* Add some margin between items */
+  font-size: 16px; /* Larger font size */
+}
+
+.countdown-item span {
+  margin-right: 8px;
+}
+
+.countdown-item.software-calendar-green-1 {
+  background-color: #5cb85c; /* Green */
+}
+
+.countdown-item.software-calendar-green-2 {
+  background-color: #5cb85c; /* Blue */
+}
+
+.countdown-item.software-calendar-green-3 {
+  background-color: #5cb85c; /* Orange */
+}
+
+.countdown-item.software-calendar-green-4 {
+  background-color: #5cb85c; /* Red */
+}
+
+.countdown-item .countdown-value {
+  margin: 0;
+  font-weight: bold;
+}
+
+.search-section {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-select {
+    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .btn-primarys {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    width: 100%;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  

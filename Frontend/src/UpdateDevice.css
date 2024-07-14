@@ -1,0 +1,83 @@
+/* UpdateDevice.css */
+
+.update-device-card {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.update-device-card h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.update-device-card .form-section {
+  margin-bottom: 30px;
+}
+
+.update-device-card .form-section .section-heading {
+  font-size: 1.5rem;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.update-device-card .form-section .form-group {
+  margin-bottom: 20px;
+}
+
+.update-device-card .form-section .form-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.update-device-card .form-section .form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.update-device-card .form-section .form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.update-device-card .form-section .form-control::placeholder {
+  color: #999;
+}
+
+.update-device-card .form-section .form-group-last {
+  text-align: center;
+}
+
+.update-device-card .form-section .btn-update-device {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.update-device-card .form-section .btn-update-device:hover {
+  background-color: #0056b3;
+}
