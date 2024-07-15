@@ -9,6 +9,7 @@ const Profile = () => {
       <header className="jumbotron">
         <h3>
           <strong>{currentUser.username}</strong> Profile
+          
         </h3>
       </header>
       {/* <p>

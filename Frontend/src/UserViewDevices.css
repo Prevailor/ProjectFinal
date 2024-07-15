@@ -14,6 +14,7 @@
 .search-section input[type="text"],
 .search-section button {
   margin-right: 10px; /* Ensure consistent spacing between elements */
+  margin-top: 2%;
 }
 
 /* Table styles */
@@ -27,7 +28,7 @@
 
 /* Table header styles */
 .view-devices-table th {
-  background-color: #007bff; /* Primary color */
+  background-color: #0e355e; /* Primary color */
   color: #fff; /* White text color */
   padding: 12px;
   text-align: center; /* Center align text */
@@ -80,7 +81,7 @@
 }
 
 .view-devices-table th {
-  background-color: #007bff;
+  background-color: #091f37;
   color: #fff;
   padding: 5px;
 }
@@ -124,7 +125,7 @@
 }
 
 .user-view-software table th {
-  background-color: #007bff;
+  background-color: #091f37;
   color: #fff;
   padding: 10px;
 }

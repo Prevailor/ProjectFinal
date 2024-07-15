@@ -312,7 +312,7 @@ const DeviceManagementPage = () => {
             </select>
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primaryy">
             Add Device
           </button>
         </form>

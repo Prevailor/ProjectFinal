@@ -273,7 +273,7 @@ const UpdateDeviceForm = () => {
         setDevice(fetchedDevice);
       } catch (error) {
         console.error('Error fetching device:', error);
-        setError('Failed to fetch device.');
+        alert('Failed to fetch device.');
       }
     };
 

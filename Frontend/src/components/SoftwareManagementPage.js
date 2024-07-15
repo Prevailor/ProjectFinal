@@ -244,7 +244,7 @@ const SoftwareManagementPage = () => {
               ))}
             </select>
           </div>
-          <button type="submit" className="btn btn-primary">Add Software</button>
+          <button type="submit" className="btn btn-primaryy">Add Software</button>
         </form>
       </div>
     </div>

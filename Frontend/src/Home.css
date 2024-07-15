@@ -1,134 +1,161 @@
-/* General Styles */
 .home-page {
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background-color: #f6f9fc;
-    padding: 100px 0;
-    text-align: center;
-  }
-  
-  .hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-  }
-  
-  .hero-button {
-    background-color: #f48024;
-    color: #fff;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Features Section */
-  .features-container {
-    background-color: #fff;
-    padding: 80px 0;
-  }
-  
-  .features-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .feature {
-    max-width: 300px;
-    padding: 20px;
-    margin: 20px;
-    text-align: left;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .feature:hover {
-    transform: translateY(-5px);
-  }
-  
-  .feature-image {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  
-  .feature-text {
-    padding: 20px;
-  }
-  
-  .feature-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .feature-description {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  .expanded-description {
-    background-color: #f6f9fc;
-    padding: 20px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
-  
-  /* CTA Section */
-  .cta-section {
-    background-color: #f48024;
-    color: #fff;
-    text-align: center;
-    padding: 80px 0;
-  }
-  
-  .cta-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .cta-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-  }
-  
-  .cta-button {
-    background-color: #fff;
-    color: #f48024;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #e0e0e0;
-  }
-  
-  /* Footer Section */
-  .footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: transparent; /* Remove background color */
+}
+
+.hero {
+  background-color: #165bc4;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+  margin-top: -36px; /* Adjust the margin-top to remove the gap */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.hero .btn {
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #fff;
+  color: #0d6efd;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.features-container {
+  position: relative;
+  z-index: 1;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  width: 140%;
+  margin-left: -20%;
+}
+
+.features-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.feature {
+  flex: 1 1 calc(33.33% - 40px);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  display: flex; /* Ensure the feature is displayed as flex container */
+  flex-direction: column; /* Stack image and text vertically */
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature .feature-image {
+  width: 100%; /* Image takes full width of parent */
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure images maintain aspect ratio and cover the container */
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.feature .feature-text {
+  flex: 1; /* Expand text content to fill remaining space */
+}
+
+.feature .feature-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.feature .feature-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.expanded-description {
+  margin-top: 10px;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #165bc4;
+  color: #fff;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.cta-section .btn {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #fff;
+  color: #0d6efd;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-section .btn:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+  margin-bottom: -36px;
+}

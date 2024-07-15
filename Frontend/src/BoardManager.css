@@ -1,0 +1,45 @@
+/* Table styles */
+.tables {
+    background-color: #fff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse border spacing */
+  }
+  
+  /* Table header styles */
+  .tables th {
+    background-color: #0d4179; /* Primary color */
+    color: #fff; /* White text color */
+    padding: 10px;
+  }
+  
+  /* Table body styles */
+  .tables td {
+    padding: 10px;
+  }
+  
+  /* Colorful table data */
+  .tables tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Light gray background for odd rows */
+  }
+  
+  .tables tbody tr:hover {
+    background-color: #e3e3e3; /* Darker shade on hover */
+  }
+  
+  /* Title underline */
+  .underline {
+    text-decoration: underline;
+  }
+  
+  .mt-5{
+    width: 100%;
+    margin-left: 1%;
+  }
+
+  .btn-primaryys{
+    border: 1px;
+    background-color: rgb(34, 84, 248);
+    color: #fff;
+  }

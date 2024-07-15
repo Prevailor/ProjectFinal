@@ -50,7 +50,7 @@ const ViewRequestLogs = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-4">View Request Logs</h2>
+      <h2 className="text-center mt-5 mb-3 underline">View Request Logs</h2>
       {errorState && (
         <div className="alert alert-danger" role="alert">
           {errorMessage}
@@ -59,7 +59,7 @@ const ViewRequestLogs = () => {
       <table className="table mt-4">
         <thead>
           <tr>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>Asset ID</th>
             <th>Type</th>
             <th>Item</th>
@@ -71,7 +71,7 @@ const ViewRequestLogs = () => {
         <tbody>
           {requestLogs.map((log) => (
             <tr key={log.logId}>
-              <td>{log.logId}</td>
+              {/* <td>{log.logId}</td> */}
               <td>{log.assetid}</td>
               <td>{log.type}</td>
               <td>{log.item}</td>

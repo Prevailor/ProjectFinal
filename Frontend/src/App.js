@@ -33,6 +33,7 @@ import ViewRequestLogs from "./components/ViewRequestLogs";
 import RenewForm from "./components/RenewForm";
 import ReplaceForm from "./components/ReplaceForm";
 import Notification from "./components/Notification";
+import AllUsers from "./components/AllUser";
 
 const App = () => {
   const navigate = useNavigate();
@@ -166,6 +167,7 @@ const App = () => {
           <Route path="/admin/device-management" element={<DeviceManagementPage />} />
           <Route path="/admin/software-management" element={<SoftwareManagementPage />} />
           <Route path="/admin/lifecycleEvent-management" element={<LifecycleEventManagementPage />} />
+          <Route path="/admin/allusers" element={<AllUsers />} />
           <Route path="/admin/updateuserrole-management" element={<UpdateUserRole />} />
           <Route path="/admin/updatedeviceform" element={<UpdateDeviceForm />} />
           <Route path="/admin/deletedeviceform" element={<DeleteForm/>} />
