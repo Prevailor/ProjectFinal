@@ -2154,11 +2154,11 @@ const UserViewDevices = () => {
   };
 
   const renderDeviceCountdownChart = (device) => {
-    if (!showCharts[device.deviceId]) return null; // Return null if showCharts is false for this device
-
+    if (!showCharts[device.deviceId]) return; // Exit if showCharts is false for this device
+  
     const labels = [];
     const data = [];
-
+  
     if (device.countdown?.years !== undefined) {
       labels.push('Years');
       data.push(device.countdown.years);
@@ -2172,57 +2172,63 @@ const UserViewDevices = () => {
       data.push(device.countdown.days);
     }
     // Omitting hours and minutes
-
+  
     const ctx = document.getElementById(`deviceCountdownChart-${device.deviceId}`);
-
-    if (!ctx) return null; // Return null if canvas context is not found
-
-    // Check if chart instance already exists and destroy it
-    if (Chart.getChart(ctx)) {
-      Chart.getChart(ctx).destroy();
-    }
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Time Remaining',
-          data: data,
-          backgroundColor: 'rgba(54, 162, 235, 0.6)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          },
-          title: {
-            display: true,
-            text: 'Device Countdown to End of Life'
-          }
+  
+    if (!ctx) return; // Exit if canvas context is not found
+  
+    let chart = Chart.getChart(ctx);
+  
+    if (!chart) {
+      // Initialize the chart if it doesn't exist
+      chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Time Remaining',
+            data: data,
+            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+          }]
         },
-        scales: {
-          y: {
-            beginAtZero: true,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            },
             title: {
               display: true,
-              text: 'Time'
+              text: 'Device Countdown to End of Life'
             }
           },
-          x: {
-            title: {
-              display: true,
-              text: 'Units'
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Time'
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Units'
+              }
             }
           }
         }
-      }
-    });
+      });
+    } else {
+      // Update the existing chart with new data
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = data;
+      chart.update();
+    }
   };
+  
 
   const initializeCharts = () => {
     devices.forEach(device => {

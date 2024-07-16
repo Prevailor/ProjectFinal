@@ -169,8 +169,8 @@ const App = () => {
           <Route path="/admin/lifecycleEvent-management" element={<LifecycleEventManagementPage />} />
           <Route path="/admin/allusers" element={<AllUsers />} />
           <Route path="/admin/updateuserrole-management" element={<UpdateUserRole />} />
-          <Route path="/admin/updatedeviceform" element={<UpdateDeviceForm />} />
-          <Route path="/admin/deletedeviceform" element={<DeleteForm/>} />
+          <Route path="/admin/updatedeviceform-management" element={<UpdateDeviceForm />} />
+          <Route path="/admin/deletedeviceform-management" element={<DeleteForm/>} />
           <Route path="/update-software/:softwareId" element={<UpdateSoftware />} />
           <Route path="/update-lifecycleEvent/:eventId" element={<UpdateLifecycleEvent />} />
           <Route path="/technicalsupport/view-end-of-support-dates" element={<ViewEndOfSupportDates />} />
