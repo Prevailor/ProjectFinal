@@ -223,7 +223,7 @@ const LifecycleEventManagementPage = () => {
               ))}
             </select>
           </div>
-          <button type="submit" className="btn btn-primary">Add Event</button>
+          <button type="submit" className="btn btn-primaryyy">Add Event</button>
         </form>
       </div>
     </div>

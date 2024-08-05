@@ -69,6 +69,7 @@ const App = () => {
     setShowManagerBoard(false);
     setShowAdminBoard(false);
     setCurrentUser(undefined);
+    navigate("/login");
   };
 
   return (

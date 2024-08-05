@@ -64,16 +64,32 @@ body {
   align-items: center;
 }
 
+.jumbotron {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.jumbotron h2 {
+  color: #333;
+  font-weight: bold;
+}
+
 .sidebar-toggle {
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  margin-right: 20px;
-  color: #160059;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #413f3f;
 }
 
 .admin-heading {
+  margin-top: -1.8%;
   margin-left: 7%;
   font-size: 24px;
   color: #333;

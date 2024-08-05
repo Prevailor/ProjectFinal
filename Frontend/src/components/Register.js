@@ -365,7 +365,7 @@ const Register = () => {
               </div>
 
               <div className="form-group">
-                <button className="btn btn-primary btn-block">
+                <button className="btn btn-primaryy">
                   <FontAwesomeIcon icon={faUserPlus} />
                   <span className="btn-text">Sign Up</span>
                 </button>

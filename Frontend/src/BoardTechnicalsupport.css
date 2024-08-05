@@ -96,6 +96,13 @@ body {
     left: 20px;
     color: #413f3f;
   }
+
+  .admin-heading{
+    margin-top: -1.8%;
+    margin-left: 7%;
+    font-size: 24px;
+    color: #333;
+  }
   
   .dashboard-content {
     background-color: #fff;

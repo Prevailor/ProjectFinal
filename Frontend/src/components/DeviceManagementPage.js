@@ -277,8 +277,8 @@ const DeviceManagementPage = () => {
             >
               <option value="">Select Status</option>
               <option value="Active">Active</option>
-              <option value="Expired">Expired</option>
-              <option value="Unsupported">Unsupported</option>
+              {/* <option value="Expired">Expired</option>
+              <option value="Unsupported">Unsupported</option> */}
             </select>
           </div>
           <div className="form-group">

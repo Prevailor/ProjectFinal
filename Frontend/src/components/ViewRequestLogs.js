@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import TechnicalSupportService from '../services/TechnicalSupportService';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'D:\\ProjectFinal\\Frontend\\src\\ViewRequestLogs.css'
 
 const ViewRequestLogs = () => {
   const [requestLogs, setRequestLogs] = useState([]);
@@ -49,14 +50,14 @@ const ViewRequestLogs = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center mt-5 mb-3 underline">View Request Logs</h2>
+    <div className="container-tech">
+      <h2 className="page-title">View Request Logs</h2>
       {errorState && (
         <div className="alert alert-danger" role="alert">
           {errorMessage}
         </div>
       )}
-      <table className="table mt-4">
+      <table className="tablerequestlog">
         <thead>
           <tr>
             {/* <th>ID</th> */}

@@ -36,10 +36,10 @@ const RenewForm = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <h2 className="mb-4">Renew Form</h2>
+        <div className="container">
+            <h2 className="page-title">Renew Form</h2>
             <form>
-                <div className="mb-3">
+                <div className="mb">
                     <label htmlFor="expirationDate" className="form-label">Expiration Date</label>
                     <input
                         type="date"
@@ -49,7 +49,7 @@ const RenewForm = () => {
                         onChange={(e) => setExpirationDate(e.target.value)}
                     />
                 </div>
-                <div className="mb-3">
+                <div className="mb">
                     <label htmlFor="endOfSupportDate" className="form-label">End of Support Date</label>
                     <input
                         type="date"
@@ -59,6 +59,7 @@ const RenewForm = () => {
                         onChange={(e) => setEndOfSupportDate(e.target.value)}
                     />
                 </div>
+                <br></br>
                 <button
                     type="button"
                     className="btn btn-primary"

@@ -263,8 +263,24 @@ const UpdateDeviceForm = () => {
   const [deviceId, setDeviceId] = useState('');
   const [device, setDevice] = useState(null); // Initially no device
   const [error, setError] = useState(null);
+  const [deviceList, setDeviceList] = useState([]);
   const [responseMessage, setResponseMessage] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false); // Track form submission
+
+
+  useEffect(() => {
+    const fetchDeviceList = async () => {
+      try {
+        const devices = await DeviceService.getAllDevices(); // Assuming getAllDevices exists in DeviceService
+        setDeviceList(devices);
+      } catch (error) {
+        console.error('Error fetching devices:', error);
+        setError('Failed to fetch devices.');
+      }
+    };
+ 
+    fetchDeviceList();
+  }, []);
 
   useEffect(() => {
     const fetchDeviceData = async () => {
@@ -307,18 +323,24 @@ const UpdateDeviceForm = () => {
           <div className="card p-4 rounded">
             <form onSubmit={handleFormSubmit}>
               <div className="form-group">
-                <label htmlFor="deviceId">Enter Device ID:</label>
-                <input
-                  type="text"
+                <label htmlFor="deviceId">Select Device:</label>
+                <select
                   id="deviceId"
                   name="deviceId"
                   value={deviceId}
                   onChange={handleDeviceIdChange}
                   className="form-control"
                   required
-                />
+                >
+                  <option value="">Select device</option>
+                  {deviceList.map((device) => (
+                    <option key={device.deviceId} value={device.deviceId}>
+                      {device.deviceName}
+                    </option>
+                  ))}
+                </select>
               </div>
-              <button type="submit" className="btn btn-primaryss mb-3">
+              <button type="submit" className="btn btn-primaryy">
                 Fetch Device Details
               </button>
               {error && <p className="text-danger">{error}</p>}

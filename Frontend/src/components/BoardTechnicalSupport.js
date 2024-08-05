@@ -223,8 +223,8 @@ const BoardTechnicalsupport = () => {
             <button className="sidebar-toggle" onClick={toggleSidebar}>
               <FontAwesomeIcon icon={faBars} />
             </button>
-            <h2 className="text-center">
-              <FontAwesomeIcon icon={faHeadset} className="me-3" />
+            <h2 className="admin-heading">
+              {/* <FontAwesomeIcon icon={faHeadset} className="me-3" /> */}
               Technical Support Dashboard
             </h2>
           </header>

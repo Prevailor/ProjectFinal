@@ -4,6 +4,10 @@
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, #06113a, #5d0bc1);
+    width: 170%;
+    margin-left: -30%;
+    margin-top: -5%;
+    
   }
   
   .login-content {
@@ -56,10 +60,10 @@
     box-shadow: 0 0 0 2px rgba(110, 142, 251, 0.2);
   }
   
-  .btn-primary {
+  .btn-primaryy {
     width: 100%;
     padding: 0.75rem;
-    background-color: #6e8efb;
+    background-color: #0730b5;
     border: none;
     border-radius: 4px;
     color: white;

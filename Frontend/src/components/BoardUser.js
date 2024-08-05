@@ -89,7 +89,7 @@ const BoardUser = () => {
         </ul>
       </div>
       <div className="user-content">
-        <header className="user-header">
+        <header className="jumbotron">
         <button className="sidebar-toggle" onClick={toggleSidebar}>
             <FontAwesomeIcon icon={faBars} />
           </button>

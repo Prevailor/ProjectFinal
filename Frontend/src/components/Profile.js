@@ -155,16 +155,16 @@ const Profile = () => {
         </Col>
       </Row>
       <Row className="mt-4">
-        <Col>
+        {/* <Col>
           <Card className="profile-quote">
             <Card.Body>
               <blockquote className="blockquote mb-0">
-                <p>"The only way to do great work is to love what you do."</p>
-                <footer className="blockquote-footer">Steve Jobs</footer>
+                <p>"We try to work on things which billions of people will use every day."</p>
+                <footer className="blockquote-footer">Sundar Pichai</footer>
               </blockquote>
             </Card.Body>
           </Card>
-        </Col>
+        </Col> */}
       </Row>
     </Container>
   );

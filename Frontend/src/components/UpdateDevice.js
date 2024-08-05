@@ -1079,7 +1079,7 @@ const UpdateDevice = ({ device, setResponseMessage, setError }) => {
       </div>
       {/* Render software list fields dynamically */}
       {updatedDevice.softwareList.map((software, index) => (
-        <div key={`softwareList${index}`} className="border p-3 mb-3">
+        <div key={`softwareList${index}`} className="border p-3">
           <h4>Software {index + 1}</h4>
           <div className="form-group">
             <label htmlFor={`softwareList${index}SoftwareId`}>Software ID:</label>
@@ -1255,7 +1255,7 @@ const UpdateDevice = ({ device, setResponseMessage, setError }) => {
         />
       </div>
       {/* Add more input fields as needed */}
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primaryyy">
         Update Device
       </button>
     </form>

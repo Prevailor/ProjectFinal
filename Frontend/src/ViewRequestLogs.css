@@ -1,32 +1,32 @@
 /* Table styles */
-.tableendofsupport {
+.tablerequestlog {
     background-color: #fff; /* White background */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    width: 155%; /* Full width */
+    width: 150%; /* Full width */
     border-collapse: collapse; /* Collapse border spacing */
-    margin-left: -30%;
+    margin-left: -25%;
     height: 10%;
   }
   
   /* Table header styles */
-  .tableendofsupport th {
+  .tablerequestlog th {
     background-color: #104074; /* Primary color */
     color: #fff; /* White text color */
     padding: 10px;
   }
   
   /* Table body styles */
-  .tableendofsupport td {
+  .tablerequestlog td {
     padding: 10px;
   }
   
   /* Colorful table data */
-  .tableendofsupport tbody tr:nth-child(odd) {
+  .tablerequestlog tbody tr:nth-child(odd) {
     background-color: #f2f2f2; /* Light gray background for odd rows */
   }
   
-  .tableendofsupport tbody tr:hover {
+  .tablerequestlog tbody tr:hover {
     background-color: #e3e3e3; /* Darker shade on hover */
   }
 

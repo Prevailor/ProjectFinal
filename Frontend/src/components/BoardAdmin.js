@@ -192,7 +192,7 @@ const BoardAdmin = () => {
         </ul>
       </div>
       <div className="admin-content">
-        <header className="admin-header">
+        <header className="jumbotron">
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             <FontAwesomeIcon icon={faBars} />
           </button>

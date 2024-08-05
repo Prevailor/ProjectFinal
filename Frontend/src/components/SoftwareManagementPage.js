@@ -199,43 +199,43 @@ const SoftwareManagementPage = () => {
       <h2 className="page-title">Software Management Page</h2>
       <div className="card card-container">
         <form onSubmit={handleSubmitSoftware}>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="softwareName" className="form-label">Software Name:</label>
             <input type="text" className="form-control" id="softwareName" name="softwareName" value={newSoftware.softwareName} onChange={handleSoftwareInputChange} required />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="version" className="form-label">Version:</label>
             <input type="text" className="form-control" id="version" name="version" value={newSoftware.version} onChange={handleSoftwareInputChange} required />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="licenseKey" className="form-label">License Key:</label>
             <input type="text" className="form-control" id="licenseKey" name="licenseKey" value={newSoftware.licenseKey} onChange={handleSoftwareInputChange} required />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="purchaseDate" className="form-label">Purchase Date:</label>
             <input type="date" className="form-control" id="purchaseDate" name="purchaseDate" value={newSoftware.purchaseDate} onChange={handleSoftwareInputChange} required />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="expirationDate" className="form-label">Expiration Date:</label>
             <input type="date" className="form-control" id="expirationDate" name="expirationDate" value={newSoftware.expirationDate} onChange={handleSoftwareInputChange} required />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="supportEndDate" className="form-label">Support End Date:</label>
             <input type="date" className="form-control" id="supportEndDate" name="supportEndDate" value={newSoftware.supportEndDate} onChange={handleSoftwareInputChange} required />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="status" className="form-label">Status:</label>
             <select className="form-select" id="status" name="status" value={newSoftware.status} onChange={handleSoftwareInputChange} required>
               <option value="">Select Status</option>
               <option value="Active">Active</option>
-              <option value="Inactive">Inactive</option>
+              {/* <option value="Inactive">Inactive</option> */}
             </select>
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="dateOfLastRenewal" className="form-label">Date of Last Renewal:</label>
             <input type="date" className="form-control" id="dateOfLastRenewal" name="dateOfLastRenewal" value={newSoftware.dateOfLastRenewal} onChange={handleSoftwareInputChange} required />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label htmlFor="selectedDeviceId" className="form-label">Select Device:</label>
             <select className="form-select" id="selectedDeviceId" name="selectedDeviceId" value={selectedDeviceId} onChange={handleSoftwareInputChange} required>
               <option value="">Select Device</option>

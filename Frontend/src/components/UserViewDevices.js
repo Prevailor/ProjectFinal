@@ -1920,6 +1920,418 @@ import Chart from 'chart.js/auto'; // Import Chart.js
 
 // export default UserViewDevices;
 
+// const UserViewDevices = () => {
+//   const [devices, setDevices] = useState([]);
+//   const [errorState, setErrorState] = useState(false);
+//   const [errorMessage, setErrorMessage] = useState('');
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [searchType, setSearchType] = useState('name');
+//   const [colorClass, setColorClass] = useState('');
+//   const [selectedDevice, setSelectedDevice] = useState(null); // State to track selected device
+//   const [showCharts, setShowCharts] = useState({}); // State to control chart visibility for each device
+
+//   useEffect(() => {
+//     fetchUserDevices();
+//   }, []);
+
+//   useEffect(() => {
+//     const interval = setInterval(updateCountdowns, 1000);
+//     return () => clearInterval(interval);
+//   }, [devices]);
+
+//   const fetchUserDevices = async () => {
+//     try {
+//       const currentUser = AuthService.getCurrentUser();
+//       const response = await RegularUserService.viewDevices(currentUser.id);
+//       setDevices(response);
+//       setErrorState(false);
+//     } catch (error) {
+//       console.error('Error fetching devices:', error);
+//       setErrorState(true);
+//       setErrorMessage('Failed to fetch devices.');
+//     }
+//   };
+
+//   const updateCountdowns = () => {
+//     const updatedDevices = devices.map(device => {
+//       if (device.endOfLife) {
+//         const endOfLifeDate = new Date(device.endOfLife).getTime();
+//         const now = new Date().getTime();
+//         const timeDifference = endOfLifeDate - now;
+
+//         if (timeDifference > 0) {
+//           const daysLeft = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+//           if (daysLeft <= 30) {
+//             const hoursLeft = Math.floor(timeDifference / (1000 * 60 * 60)) % 24;
+//             const minutesLeft = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+//             const nextDay = new Date(now);
+//             nextDay.setDate(nextDay.getDate() + 1);
+//             const nextDayStart = new Date(nextDay.getFullYear(), nextDay.getMonth(), nextDay.getDate()).getTime();
+//             const daysRemaining = Math.floor((endOfLifeDate - nextDayStart) / (1000 * 60 * 60 * 24));
+
+//             return {
+//               ...device,
+//               countdown: {
+//                 days: daysRemaining,
+//                 hours: hoursLeft,
+//                 minutes: minutesLeft
+//               }
+//             };
+//           } else if (daysLeft <= 90) {
+//             return {
+//               ...device,
+//               countdown: {
+//                 days: daysLeft
+//               }
+//             };
+//           } else if (daysLeft <= 365) {
+//             const monthsLeft = Math.floor(daysLeft / 30);
+//             return {
+//               ...device,
+//               countdown: {
+//                 months: monthsLeft
+//               }
+//             };
+//           } else {
+//             const yearsLeft = Math.floor(daysLeft / 365);
+//             return {
+//               ...device,
+//               countdown: {
+//                 years: yearsLeft
+//               }
+//             };
+//           }
+//         }
+//       }
+//       return device;
+//     });
+//     setDevices(updatedDevices);
+//     updateColorClass(); // Update color class on every interval update
+//   };
+
+//   const handleReplacementRequest = async (device) => {
+//     try {
+//       const replaceDTO = {
+//         deviceId: device.deviceId,
+//         deviceName: device.deviceName,
+//         deviceType: device.deviceType
+//       };
+//       const response = await RegularUserService.requestReplacement(replaceDTO);
+
+//       const updatedDevices = devices.map(d => {
+//         if (d.deviceId === device.deviceId) {
+//           return {
+//             ...d,
+//             dateOfLastReplacement: new Date().toISOString().split('T')[0]
+//           };
+//         }
+//         return d;
+//       });
+//       setDevices(updatedDevices);
+
+//       alert('Replacement requested successfully!');
+
+//       console.log('Request Replacement Response:', response);
+
+//     } catch (error) {
+//       console.error('Error requesting replacement:', error);
+//       alert('Failed to request replacement.');
+//     }
+//   };
+
+//   const handleSearch = async () => {
+//     try {
+//       if (searchTerm.trim() === '') {
+//         fetchUserDevices();
+//         return;
+//       }
+
+//       let response;
+//       switch (searchType) {
+//         case 'name':
+//           response = await RegularUserService.searchDevicesByName(searchTerm);
+//           break;
+//         case 'status':
+//           response = await RegularUserService.searchDevicesByStatus(searchTerm);
+//           break;
+//         case 'type':
+//           response = await RegularUserService.searchDevicesByType(searchTerm);
+//           break;
+//         default:
+//           return;
+//       }
+//       setDevices(response);
+//       setErrorState(false);
+//     } catch (error) {
+//       console.error('Error searching devices:', error);
+//       setErrorState(true);
+//       setErrorMessage('Failed to search devices.');
+//     }
+//   };
+
+//   const handleDeviceClick = (device) => {
+//     if (selectedDevice && selectedDevice.deviceId === device.deviceId) {
+//       setSelectedDevice(null); // Deselect the device if it's already selected
+//     } else {
+//       setSelectedDevice(device);
+//     }
+
+//     // Toggle the chart visibility for the clicked device
+//     setShowCharts(prevState => ({
+//       ...prevState,
+//       [device.deviceId]: !prevState[device.deviceId]
+//     }));
+//   };
+
+//   const handleKeyPress = (event) => {
+//     if (event.key === 'Enter') {
+//       handleSearch();
+//     }
+//   };
+
+//   const renderCountdown = (device) => {
+//     const { countdown } = device;
+//     if (countdown !== undefined) {
+//       return (
+//         <div className="countdown-container">
+//           {countdown.years !== undefined && (
+//             <span className={`countdown-item years ${colorClass}`}>
+//               <span className="fold-top"></span>
+//               <span className="fold-bottom"></span>
+//               {`${countdown.years} ${countdown.years === 1 ? 'year' : 'years'}`}
+//             </span>
+//           )}
+//           {countdown.months !== undefined && (
+//             <span className={`countdown-item months ${colorClass}`}>
+//               <span className="fold-top"></span>
+//               <span className="fold-bottom"></span>
+//               {`${countdown.months} ${countdown.months === 1 ? 'month' : 'months'}`}
+//             </span>
+//           )}
+//           {countdown.days !== undefined && (
+//             <span className={`countdown-item days ${colorClass}`}>
+//               <span className="fold-top"></span>
+//               <span className="fold-bottom"></span>
+//               {`${countdown.days} ${countdown.days === 1 ? 'day' : 'days'}`}
+//             </span>
+//           )}
+//           {countdown.hours !== undefined && (
+//             <span className={`countdown-item hours ${colorClass}`}>
+//               <span className="fold-top"></span>
+//               <span className="fold-bottom"></span>
+//               {`${countdown.hours} ${countdown.hours === 1 ? 'hour' : 'hours'}`}
+//             </span>
+//           )}
+//           {countdown.minutes !== undefined && (
+//             <span className={`countdown-item minutes ${colorClass}`}>
+//               <span className="fold-top"></span>
+//               <span className="fold-bottom"></span>
+//               {`${countdown.minutes} ${countdown.minutes === 1 ? 'minute' : 'minutes'}`}
+//             </span>
+//           )}
+//         </div>
+//       );
+//     }
+//     return <span className="text-muted">No end of life set</span>;
+//   };
+
+//   const updateColorClass = () => {
+//     const now = new Date();
+//     const hours = now.getHours();
+//     const minutes = now.getMinutes();
+
+//     // Swap colors every hour and minute
+//     if (hours % 2 === 0 && minutes === 0) {
+//       setColorClass('calendar-green-1');
+//     } else if (hours % 2 === 0 && minutes !== 0) {
+//       setColorClass('calendar-green-2');
+//     } else if (hours % 2 !== 0 && minutes === 0) {
+//       setColorClass('calendar-green-3');
+//     } else {
+//       setColorClass('calendar-green-4');
+//     }
+//   };
+
+//   const renderDeviceCountdownChart = (device) => {
+//     if (!showCharts[device.deviceId]) return; // Exit if showCharts is false for this device
+  
+//     const labels = [];
+//     const data = [];
+  
+//     if (device.countdown?.years !== undefined) {
+//       labels.push('Years');
+//       data.push(device.countdown.years);
+//     }
+//     if (device.countdown?.months !== undefined) {
+//       labels.push('Months');
+//       data.push(device.countdown.months);
+//     }
+//     if (device.countdown?.days !== undefined) {
+//       labels.push('Days');
+//       data.push(device.countdown.days);
+//     }
+//     // Omitting hours and minutes
+  
+//     const ctx = document.getElementById(`deviceCountdownChart-${device.deviceId}`);
+  
+//     if (!ctx) return; // Exit if canvas context is not found
+  
+//     let chart = Chart.getChart(ctx);
+  
+//     if (!chart) {
+//       // Initialize the chart if it doesn't exist
+//       chart = new Chart(ctx, {
+//         type: 'bar',
+//         data: {
+//           labels: labels,
+//           datasets: [{
+//             label: 'Time Remaining',
+//             data: data,
+//             backgroundColor: 'rgba(54, 162, 235, 0.6)',
+//             borderColor: 'rgba(54, 162, 235, 1)',
+//             borderWidth: 1
+//           }]
+//         },
+//         options: {
+//           responsive: true,
+//           plugins: {
+//             legend: {
+//               display: false
+//             },
+//             title: {
+//               display: true,
+//               text: 'Device Countdown to End of Life'
+//             }
+//           },
+//           scales: {
+//             y: {
+//               beginAtZero: true,
+//               title: {
+//                 display: true,
+//                 text: 'Time'
+//               }
+//             },
+//             x: {
+//               title: {
+//                 display: true,
+//                 text: 'Units'
+//               }
+//             }
+//           }
+//         }
+//       });
+//     } else {
+//       // Update the existing chart with new data
+//       chart.data.labels = labels;
+//       chart.data.datasets[0].data = data;
+//       chart.update();
+//     }
+//   };
+  
+
+//   const initializeCharts = () => {
+//     devices.forEach(device => {
+//       renderDeviceCountdownChart(device);
+//     });
+//   };
+
+//   useEffect(() => {
+//     initializeCharts();
+//   }, [devices, showCharts]);
+
+//   return (
+//     <div className="view-devices-container">
+//       <h2 className="text-center mt-5 mb-3 underline">View Devices</h2>
+//       <div className="search-section mb-3">
+//         <select
+//           className="form-select"
+//           value={searchType}
+//           onChange={(e) => setSearchType(e.target.value)}
+//         >
+//           <option value="name">Search by Name</option>
+//           <option value="status">Search by Status</option>
+//           <option value="type">Search by Type</option>
+//         </select>
+//         <input
+//           type="text"
+//           className="form-control mt-2"
+//           placeholder={searchType === 'name' ? 'Device Name' : searchType === 'status' ? 'Status' : 'Device Type'}
+//           value={searchTerm}
+//           onChange={(e) => setSearchTerm(e.target.value)}
+//           onKeyPress={handleKeyPress}
+//         />
+//         <button className="btn btn-primary mt-2 view-devices-btn" onClick={handleSearch}>
+//           Search
+//         </button>
+//       </div>
+//       {errorState && (
+//         <div className="alert alert-danger" role="alert">
+//           {errorMessage}
+//         </div>
+//       )}
+//       <div className="table-responsive">
+//         <table className="table view-devices-table">
+//           <thead>
+//             <tr>
+//               <th>Name</th>
+//               <th>Type</th>
+//               <th>Purchase Date</th>
+//               <th>End Of Life</th>
+//               <th>End of Support Date</th>
+//               <th>Status</th>
+//               <th>Last Replacement Date</th>
+//               <th>Action</th>
+//               <th>Countdown</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {devices.map(device => (
+//               <React.Fragment key={device.deviceId}>
+//                 <tr onClick={() => handleDeviceClick(device)} style={{ cursor: 'pointer' }}>
+//                   <td>{device.deviceName}</td>
+//                   <td>{device.deviceType}</td>
+//                   <td>{device.purchaseDate}</td>
+//                   <td>{device.endOfLife}</td>
+//                   <td>{device.endOfSupportDate}</td>
+//                   <td>{device.status}</td>
+//                   <td>{device.dateOfLastReplacement}</td>
+//                   <td>
+//                     <button
+//                       className="btn btn-sm btn-primary"
+//                       onClick={() => handleReplacementRequest(device)}
+//                     >
+//                       Request Replacement
+//                     </button>
+//                   </td>
+//                   <td>{renderCountdown(device)}</td>
+//                 </tr>
+//                 {showCharts[device.deviceId] && (
+//                   <tr>
+//                     <td colSpan="9">
+//                       <div className="chart-container">
+//                         <canvas
+//                           id={`deviceCountdownChart-${device.deviceId}`}
+//                           // width="400"
+//                           // height="200"
+//                           width="5"
+//                           height="1"
+//                         ></canvas>
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 )}
+//               </React.Fragment>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default UserViewDevices;
+
 const UserViewDevices = () => {
   const [devices, setDevices] = useState([]);
   const [errorState, setErrorState] = useState(false);
@@ -1927,8 +2339,8 @@ const UserViewDevices = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchType, setSearchType] = useState('name');
   const [colorClass, setColorClass] = useState('');
-  const [selectedDevice, setSelectedDevice] = useState(null); // State to track selected device
-  const [showCharts, setShowCharts] = useState({}); // State to control chart visibility for each device
+  const [selectedDevice, setSelectedDevice] = useState(null);
+  const [showCharts, setShowCharts] = useState({});
 
   useEffect(() => {
     fetchUserDevices();
@@ -2010,7 +2422,9 @@ const UserViewDevices = () => {
     updateColorClass(); // Update color class on every interval update
   };
 
-  const handleReplacementRequest = async (device) => {
+  const handleReplacementRequest = async (device, event) => {
+    event.stopPropagation(); // Prevent click event from affecting chart visibility
+
     try {
       const replaceDTO = {
         deviceId: device.deviceId,
@@ -2031,7 +2445,6 @@ const UserViewDevices = () => {
       setDevices(updatedDevices);
 
       alert('Replacement requested successfully!');
-
       console.log('Request Replacement Response:', response);
 
     } catch (error) {
@@ -2155,10 +2568,10 @@ const UserViewDevices = () => {
 
   const renderDeviceCountdownChart = (device) => {
     if (!showCharts[device.deviceId]) return; // Exit if showCharts is false for this device
-  
+
     const labels = [];
     const data = [];
-  
+
     if (device.countdown?.years !== undefined) {
       labels.push('Years');
       data.push(device.countdown.years);
@@ -2172,13 +2585,13 @@ const UserViewDevices = () => {
       data.push(device.countdown.days);
     }
     // Omitting hours and minutes
-  
+
     const ctx = document.getElementById(`deviceCountdownChart-${device.deviceId}`);
-  
+
     if (!ctx) return; // Exit if canvas context is not found
-  
+
     let chart = Chart.getChart(ctx);
-  
+
     if (!chart) {
       // Initialize the chart if it doesn't exist
       chart = new Chart(ctx, {
@@ -2228,7 +2641,6 @@ const UserViewDevices = () => {
       chart.update();
     }
   };
-  
 
   const initializeCharts = () => {
     devices.forEach(device => {
@@ -2242,7 +2654,7 @@ const UserViewDevices = () => {
 
   return (
     <div className="view-devices-container">
-      <h2 className="text-center mt-5 mb-3 underline">View Devices</h2>
+      <h2 className="text-center mt-5  underline">View Devices</h2>
       <div className="search-section mb-3">
         <select
           className="form-select"
@@ -2299,7 +2711,7 @@ const UserViewDevices = () => {
                   <td>
                     <button
                       className="btn btn-sm btn-primary"
-                      onClick={() => handleReplacementRequest(device)}
+                      onClick={(event) => handleReplacementRequest(device, event)}
                     >
                       Request Replacement
                     </button>
@@ -2312,8 +2724,6 @@ const UserViewDevices = () => {
                       <div className="chart-container">
                         <canvas
                           id={`deviceCountdownChart-${device.deviceId}`}
-                          // width="400"
-                          // height="200"
                           width="5"
                           height="1"
                         ></canvas>

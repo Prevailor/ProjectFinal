@@ -67,6 +67,7 @@ const UpdateUserRole = () => {
         <div className="col-lg-6">
           <div className="cards p-4 rounded">
             <h2 className="mb-4 underline-title">Update User Role</h2>
+            <div className="card card-container">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>User:</label>
@@ -104,6 +105,7 @@ const UpdateUserRole = () => {
                 Update Role
               </button>
             </form>
+            </div>
             {message && <div className="mt-3 alert alert-info">{message}</div>}
             {error && <div className="mt-3 alert alert-danger">{error}</div>}
           </div>
